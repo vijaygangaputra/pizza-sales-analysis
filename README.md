@@ -1,22 +1,22 @@
-# Pizza Sales Analysis | SQL Server & Power BI
+# 🍕 Pizza Sales Analysis | SQL Server & Power BI
 
 ## Project Overview
 
-This portfolio project analyzes pizza sales data using SQL Server and Power BI to evaluate business performance, identify popular products, and understand order trends.
+This project analyzes pizza sales data using SQL Server and Power BI to understand sales performance, product popularity, and order trends.
 
-The goal is to help restaurant management make informed decisions about product offerings, sales promotions, and operational planning.
+The objective is to help restaurant management answer important business questions, identify sales opportunities, and make data-driven decisions about menu performance and operational planning.
 
 ## Business Problem
 
-The restaurant needs to understand which products and categories generate the most revenue, when order demand is highest, and which pizzas may need additional attention.
+A pizza restaurant wants to understand its sales performance and identify which products and categories contribute most to revenue.
 
-This analysis answers business questions such as:
+Management needs insights into:
 
-- What are the restaurant's overall sales KPIs?
-- Which pizza categories and sizes contribute most to revenue?
-- Which pizzas are the best and worst sellers?
-- How does order volume vary by day and month?
-- When does the restaurant experience its highest order demand?
+- Overall revenue and order performance
+- Best- and worst-selling pizzas
+- Sales contribution by pizza category and size
+- Daily and monthly order trends
+- Product performance to support menu and promotional decisions
 
 ## Tools & Technologies
 
@@ -26,95 +26,91 @@ This analysis answers business questions such as:
 
 ## Dataset
 
-The dataset contains 48,620 pizza sales records and 12 columns, including:
+The dataset contains 48,620 records and 12 columns, including:
 
-- Order ID, pizza name, and pizza category
-- Pizza size and quantity
+- Order ID
+- Pizza name, category, and size
+- Quantity sold
 - Unit price and total price
 - Order date and order time
 - Pizza ingredients
 
-Each row represents a pizza line item within an order. Multiple rows can belong to the same order.
+Each row represents a pizza line item. An order may contain multiple line items.
 
-## Key Performance Indicators
+The analysis covers sales from January 2015 through December 2015.
+
+## Business Questions
+
+1. What are the restaurant's total revenue, order count, and pizza sales?
+2. What is the average revenue per order?
+3. Which days of the week have the highest order volume?
+4. How do orders change from month to month?
+5. Which pizza categories and sizes contribute most to revenue?
+6. Which pizzas are the top and bottom performers by revenue, quantity, and number of orders?
+
+## Key Performance Indicators (KPIs)
 
 | KPI | Result |
 |---|---:|
-| Total Revenue | 817,860.05 |
-| Average Order Value | 38.31 |
+| Total Revenue | $817,860.05 |
+| Average Order Value | $38.31 |
 | Total Pizzas Sold | 49,574 |
 | Total Orders | 21,350 |
 | Average Pizzas Per Order | 2.32 |
 
-*Revenue and average order value are expressed in the dataset's currency units.*
+*Currency formatting follows the values displayed in the dataset and report.*
 
 ## SQL Analysis
 
-SQL Server was used to calculate KPIs and investigate sales performance.
+SQL Server was used to calculate business KPIs and analyze sales performance.
 
-The analysis includes:
+The SQL queries include:
 
-- Overall revenue, order count, and quantity sold
-- Average order value and average pizzas per order
+- Total revenue, average order value, total pizzas sold, and distinct order count
 - Daily and monthly order trends
-- Revenue contribution by pizza category and size
-- Pizza category sales volume
-- Top and bottom 5 pizzas by revenue, quantity, and number of orders
+- Revenue percentage by pizza category and size
+- Pizza quantity sold by category
+- Top 5 and bottom 5 pizzas by revenue
+- Top 5 and bottom 5 pizzas by quantity sold
+- Top 5 and bottom 5 pizzas by number of orders
+
+**SQL script:** [View pizza sales queries](sql/pizza_sales_queries.sql)
 
 ## Power BI Dashboard
 
-The Power BI report presents sales KPIs, order trends, category and size comparisons, and pizza product rankings.
+The Power BI report contains two pages: Sales Overview and Best / Worst Sellers.
 
-### Dashboard Preview
+### 1. Home — Sales Overview
 
-<img width="1542" height="843" alt="Screenshot 2026-10-22 210834" src="https://github.com/user-attachments/assets/0d73ca23-9ef6-403d-87b1-c0704a06d65c" />
+This page presents the main KPIs, daily and monthly order trends, sales contribution by pizza category and size, and quantity sold by category.
 
-<img width="1546" height="845" alt="Screenshot 2026-10-22 210900" src="https://github.com/user-attachments/assets/a8d1ffb8-ad9a-471a-8902-12aea5837bb4" />
+![Pizza Sales Dashboard - Home](images/pizza-sales-home.png)
 
-Open the Power BI report: [Pizza Sales Dashboard](powerbi/pizza_sales_dashboard.pbix)
+### 2. Best and Worst Sellers
+
+This page compares the top and bottom five pizzas by revenue, quantity sold, and number of orders.
+
+![Pizza Sales Dashboard - Best and Worst Sellers](images/pizza-sales-best-worst.png)
+
+**Download the Power BI report:** [pizza_sales_dashboard.pbix](powerbi/pizza_sales_dashboard.pbix)
+
+Open the downloaded file using Power BI Desktop.
 
 ## Key Findings
 
-- **Classic pizzas** contributed the largest category revenue share at approximately 26.91%.
-- **Large pizzas** accounted for approximately 45.89% of revenue by size.
-- **The Thai Chicken Pizza** was the top pizza by revenue, generating 43,434.25.
-- **The Classic Deluxe Pizza** was the top pizza by quantity sold, with 2,453 pizzas.
-- The business recorded 21,350 distinct orders and sold 49,574 pizzas.
+- **Classic pizza category:** Contributed approximately 26.91% of total revenue, the highest share among categories.
+- **Large pizza size:** Contributed approximately 45.89% of revenue, the largest share among sizes.
+- **Top pizza by revenue:** The Thai Chicken Pizza generated approximately $43.4K in revenue.
+- **Top pizza by quantity:** The Classic Deluxe Pizza sold approximately 2,453 units.
+- **Busiest weekday:** Friday had the highest order volume in the weekday trend, at approximately 3.5K orders.
 
-These findings can help management review product promotions, menu performance, and demand patterns.
+These findings describe the sales patterns observed in the dataset.
 
 ## Business Recommendations
 
-- Review promotions for categories and products with lower revenue contribution.
-- Maintain availability of popular pizzas, especially during peak ordering periods.
-- Use daily and hourly order trends to support staffing and preparation planning.
-- Investigate low-performing products before making menu changes.
+Based on the observed sales patterns:
 
-These are suggested actions based on sales data; costs, margins, inventory, and staffing data would be needed to evaluate their impact.
-
-## Limitations
-
-- The dataset does not include ingredient costs, operating expenses, or profit margins.
-- There are no customer identifiers, so customer retention and individual customer behavior cannot be analyzed.
-- The analysis describes historical sales and does not establish the causes of sales performance.
-
-## Repository Structure
-
-```text
-pizza-sales-analysis/
-├── README.md
-├── sql/
-│   └── pizza_sales_queries.sql
-├── powerbi/
-│   └── pizza_sales_dashboard.pbix
-├── images/
-│   └── dashboard.png
-└── data/
-    └── README.md
-```
-
-## Author
-
-Vijay Gangaputra
-
-Data Analyst Portfolio Project
+- Review the performance of lower-revenue products to identify potential menu or promotional opportunities.
+- Prioritize availability of popular pizza varieties, especially during high-demand periods.
+- Use weekday and monthly order trends to support staffing and preparation planning.
+- Investigate product-level revenue
