@@ -67,7 +67,9 @@ The Power BI report presents sales KPIs, order trends, category and size compari
 
 ### Dashboard Preview
 
-![Pizza Sales Dashboard](images/dashboard.png)
+<img width="1542" height="843" alt="Screenshot 2026-10-22 210834" src="https://github.com/user-attachments/assets/0d73ca23-9ef6-403d-87b1-c0704a06d65c" />
+
+<img width="1546" height="845" alt="Screenshot 2026-10-22 210900" src="https://github.com/user-attachments/assets/a8d1ffb8-ad9a-471a-8902-12aea5837bb4" />
 
 Open the Power BI report: [Pizza Sales Dashboard](powerbi/pizza_sales_dashboard.pbix)
 
