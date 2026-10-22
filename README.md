@@ -113,4 +113,4 @@ Based on the observed sales patterns:
 - Review the performance of lower-revenue products to identify potential menu or promotional opportunities.
 - Prioritize availability of popular pizza varieties, especially during high-demand periods.
 - Use weekday and monthly order trends to support staffing and preparation planning.
-- Investigate product-level revenue
+- Investigate product-level revenue and quantity differences before making menu changes.
